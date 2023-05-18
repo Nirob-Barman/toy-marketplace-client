@@ -74,9 +74,9 @@ const Main = () => {
                 </Tab.Container>
             </Container> */}
 
-            <ReactTabs />
+            {/* <ReactTabs /> */}
 
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };

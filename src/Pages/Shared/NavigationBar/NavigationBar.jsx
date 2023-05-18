@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Navbar, Nav, NavDropdown, Button, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 // import logo from './path/to/logo.png';
 
 const NavigationBar = () => {
@@ -51,7 +52,7 @@ const NavigationBar = () => {
                                 <Button variant="outline-primary" onClick={handleLogout}>Logout</Button>
                             </>
                         ) : (
-                            <Button variant="primary" onClick={handleLogin}>Login</Button>
+                                <Link to="/login"><Button variant="primary" onClick={handleLogin}>Login</Button></Link>
                         )}
                     </Nav>
                 </Navbar.Collapse>

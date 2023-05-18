@@ -1,11 +1,17 @@
-import React from 'react';
-import NavigationBar from '../NavigationBar/NavigationBar';
+
+import Banner from '../../Banner/Banner';
+import { Container } from 'react-bootstrap';
+import Gallery from '../../Gallery/Gallery';
+import ReactTabs from '../../Home/ReactTabs';
 
 const Header = () => {
     return (
-        <div>
-            <NavigationBar />
-        </div>
+        <Container className='my-5'>
+            <Banner />
+            <Gallery />
+            <ReactTabs />
+            Extra Two section
+        </Container>
     );
 };
 
