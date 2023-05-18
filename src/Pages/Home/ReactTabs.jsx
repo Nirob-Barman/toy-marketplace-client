@@ -74,11 +74,32 @@ const MyTabs = () => {
                 </Nav.Item>
             </Nav>
 
-            <Tab.Content>
+            {/* <Tab.Content>
                 {Object.keys(toysData).map((tabKey) => (
                     <Tab.Pane key={tabKey} eventKey={tabKey}>
                         <h3>{tabKey === 'mathToys' ? 'Math Toys' : tabKey === 'languageToys' ? 'Language Toys' : 'Science Toys'}</h3>
                         {toysData[tabKey].map((toy) => (
+                            <Card key={toy.id}>
+                                <Card.Img variant="top" src={toy.image} />
+                                <Card.Body>
+                                    <Card.Title>{toy.name}</Card.Title>
+                                    <Card.Text>
+                                        Price: ${toy.price}<br />
+                                        Rating: {toy.rating}
+                                    </Card.Text>
+                                    <Button variant="primary">View Details</Button>
+                                </Card.Body>
+                            </Card>
+                        ))}
+                    </Tab.Pane>
+                ))}
+            </Tab.Content> */}
+
+            <Tab.Content>
+                {Object.entries(toysData).map(([tabKey, toys]) => (
+                    <Tab.Pane key={tabKey} eventKey={tabKey}>
+                        <h3>{tabKey === 'mathToys' ? 'Math Toys' : tabKey === 'languageToys' ? 'Language Toys' : 'Science Toys'}</h3>
+                        {toys.map((toy) => (
                             <Card key={toy.id}>
                                 <Card.Img variant="top" src={toy.image} />
                                 <Card.Body>
