@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Navbar, Nav, NavDropdown, Button, Container, Image } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
-// import logo from './path/to/logo.png';
+import logo from '../../../assets/logo.avif';
 
 const NavigationBar = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -47,17 +47,24 @@ const NavigationBar = () => {
                     <Container>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav align-items-center">
-                            <Nav>
-                                <Link
-                                    title='Delicious'
-                                    to="/">
-                                    <Image
-                                        className=''
-                                        // src="https://w7.pngwing.com/pngs/791/461/png-transparent-seed-bank-seed-company-hemp-benih-others-text-wedding-logo.png"
-                                        style={{ width: "100%", height: "40px", objectFit: "cover" }}
-                                        alt="Delicious" />
-                                </Link>
-                            </Nav>
+
+                            <Navbar.Brand className='d-flex align-items-center' href="/">
+                                <Nav>
+                                    <Link
+                                        title='ToyVerse'
+                                        to="/">
+
+                                        <Image
+                                            src={logo}
+                                            roundedCircle
+                                            style={{ width: "50px", height: "50px" }}
+                                            alt="Website Logo" fluid />
+                                    </Link>
+                                </Nav>
+                                ToyVerse
+                            </Navbar.Brand>
+
+
                             <Nav className="mx-auto gap-5">
                                 <Link to="/" className={`text-decoration-none ${location.pathname === '/' ? 'fs-6 text-uppercase text-danger text-decoration-none' : ''}`}
                                 // className={location.pathname === '/' ? 'text-danger text-decoration-none' : ''}

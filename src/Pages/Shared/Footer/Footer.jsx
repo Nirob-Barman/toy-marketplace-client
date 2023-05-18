@@ -1,6 +1,9 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Nav, Image } from 'react-bootstrap';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import logo from '../../../assets/logo.avif'
+import { Link } from 'react-router-dom';
+
 
 const Footer = () => {
     return (
@@ -8,9 +11,15 @@ const Footer = () => {
             <Container>
                 <Row>
                     <Col lg={3} md={6}>
-                        <div className="footer-logo">
-                            <img src="/logo.png" alt="Website Logo" />
-                            <h3>Company Name</h3>
+                        
+                        <div className="footer-logo text-center">
+                            <Image
+                                src={logo}
+                                roundedCircle
+                                style={{ width: "50px", height: "50px" }}
+                                alt="Website Logo" fluid />
+
+                            <h3>ToyVerse</h3>
                         </div>
                         <p>&copy; {new Date().getFullYear()} Company Name. All rights reserved.</p>
                     </Col>
