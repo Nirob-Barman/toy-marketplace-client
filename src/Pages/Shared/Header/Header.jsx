@@ -1,9 +1,10 @@
 import React from 'react';
+import NavigationBar from '../NavigationBar/NavigationBar';
 
 const Header = () => {
     return (
         <div>
-            Header
+            <NavigationBar />
         </div>
     );
 };

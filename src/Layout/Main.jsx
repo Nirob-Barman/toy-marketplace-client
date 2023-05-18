@@ -7,7 +7,7 @@ import Footer from '../Pages/Shared/Footer/Footer';
 // import { Container } from 'react-bootstrap';
 
 import { useState } from 'react';
-import { Tab, Nav } from 'react-bootstrap';
+import { Tab, Nav, Container } from 'react-bootstrap';
 
 const Main = () => {
 
@@ -41,9 +41,9 @@ const Main = () => {
                 </Tabs>
             </Container> */}
 
-            <div className='max-width-auto'>
+            <Container>
                 <Tab.Container activeKey={activeTab} onSelect={handleTabSelect}>
-                    <Nav variant="tabs">
+                    <Nav variant="pills">
                         <Nav.Item>
                             <Nav.Link eventKey="tab1">Tab 1</Nav.Link>
                         </Nav.Item>
@@ -54,6 +54,7 @@ const Main = () => {
                             <Nav.Link eventKey="tab3">Tab 3</Nav.Link>
                         </Nav.Item>
                     </Nav>
+
 
                     <Tab.Content>
                         <Tab.Pane eventKey="tab1">
@@ -70,7 +71,7 @@ const Main = () => {
                         </Tab.Pane>
                     </Tab.Content>
                 </Tab.Container>
-            </div>
+            </Container>
 
             <Footer />
         </div>
