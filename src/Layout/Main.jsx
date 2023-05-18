@@ -1,21 +1,22 @@
 
 import Header from '../Pages/Shared/Header/Header';
 import Footer from '../Pages/Shared/Footer/Footer';
+import ReactTabs from '../Pages/Home/ReactTabs';
 
 // import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 // import 'react-tabs/style/react-tabs.css';
 // import { Container } from 'react-bootstrap';
 
-import { useState } from 'react';
-import { Tab, Nav, Container } from 'react-bootstrap';
+// import { useState } from 'react';
+// import { Tab, Nav, Container } from 'react-bootstrap';
 
 const Main = () => {
 
-    const [activeTab, setActiveTab] = useState('tab1');
+    // const [activeTab, setActiveTab] = useState('tab1');
 
-    const handleTabSelect = (tab) => {
-        setActiveTab(tab);
-    };
+    // const handleTabSelect = (tab) => {
+    //     setActiveTab(tab);
+    // };
 
     return (
         <div>
@@ -41,7 +42,7 @@ const Main = () => {
                 </Tabs>
             </Container> */}
 
-            <Container>
+            {/* <Container>
                 <Tab.Container activeKey={activeTab} onSelect={handleTabSelect}>
                     <Nav variant="pills">
                         <Nav.Item>
@@ -71,7 +72,9 @@ const Main = () => {
                         </Tab.Pane>
                     </Tab.Content>
                 </Tab.Container>
-            </Container>
+            </Container> */}
+
+            <ReactTabs />
 
             <Footer />
         </div>
