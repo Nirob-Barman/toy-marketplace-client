@@ -62,21 +62,21 @@ const NavigationBar = () => {
                                 <Link to="/" className={`text-decoration-none ${location.pathname === '/' ? 'fs-6 text-uppercase text-danger text-decoration-none' : ''}`}
                                 // className={location.pathname === '/' ? 'text-danger text-decoration-none' : ''}
                                 >Home</Link>
-                                <Link to="/blog"
-                                    className={`text-decoration-none ${location.pathname === '/blog' ? 'fs-6 text-uppercase text-danger text-decoration-none' : ''}`}
+                                <Link to="/allToys"
+                                    className={`text-decoration-none ${location.pathname === '/allToys' ? 'fs-6 text-uppercase text-danger text-decoration-none' : ''}`}
                                 // className={location.pathname === '/blog' ? 'text-danger text-decoration-none' : ''}
-                                >Blog</Link>
-                                <Link to="/about"
-                                    className={`text-decoration-none ${location.pathname === '/about' ? 'fs-6 text-uppercase text-danger text-decoration-none' : ''}`}
+                                >All Toys</Link>
+                                <Link to="/blogs"
+                                    className={`text-decoration-none ${location.pathname === '/blogs' ? 'fs-6 text-uppercase text-danger text-decoration-none' : ''}`}
                                 // className={location.pathname === '/about' ? 'text-danger text-decoration-none' : ''}
-                                >About</Link>
+                                >Blogs</Link>
                             </Nav>
 
-                            <Nav className="mx-auto">
+                            {/* <Nav className="mx-auto">
                                 <Nav.Link href="/">Home</Nav.Link>
                                 <Nav.Link href="/all-toys">All Toys</Nav.Link>
                                 <Nav.Link href="/blogs">Blogs</Nav.Link>
-                            </Nav>
+                            </Nav> */}
 
                             <Nav>
                                 {user && (
@@ -87,7 +87,7 @@ const NavigationBar = () => {
                                             {username}
                                         </Nav.Link>
                                     </>
-                                ) }
+                                )}
                             </Nav>
 
                             <Nav className='gap-2'>

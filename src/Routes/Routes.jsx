@@ -7,6 +7,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import LoginLayout from "../Layout/LoginLayout";
 import ReactTabs from "../Pages/Home/ReactTabs";
+import Blogs from "../Pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <LoginPage />
+            },
+            {
+                path: '/blogs',
+                element: <Blogs />
             }
         ]
 
