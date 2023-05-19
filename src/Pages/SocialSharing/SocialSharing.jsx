@@ -1,5 +1,6 @@
 import React from "react";
 import { ButtonGroup, Button } from "react-bootstrap";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const SocialSharing = ({ shareUrl, title }) => {
     // Function to handle sharing on Facebook
@@ -21,17 +22,19 @@ const SocialSharing = ({ shareUrl, title }) => {
     };
 
     return (
-        <ButtonGroup className="my-5">
-            <Button variant="primary" onClick={shareOnFacebook}>
-                Share on Facebook
-            </Button>
-            <Button variant="info" onClick={shareOnTwitter}>
-                Share on Twitter
-            </Button>
-            <Button variant="danger" onClick={shareOnInstagram}>
-                Share on Instagram
-            </Button>
-        </ButtonGroup>
+        <div className="text-center">
+            <ButtonGroup className="my-5">
+                <Button variant="primary" onClick={shareOnFacebook}>
+                    Share on <FaFacebook></FaFacebook>
+                </Button>
+                <Button variant="info" onClick={shareOnTwitter}>
+                    Share on <FaTwitter></FaTwitter>
+                </Button>
+                <Button variant="danger" onClick={shareOnInstagram}>
+                    Share on <FaInstagram></FaInstagram>
+                </Button>
+            </ButtonGroup>
+        </div>
     );
 };
 
