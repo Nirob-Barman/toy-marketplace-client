@@ -8,6 +8,7 @@ import LoginPage from "../Pages/LoginPage/LoginPage";
 import LoginLayout from "../Layout/LoginLayout";
 import ReactTabs from "../Pages/Home/ReactTabs";
 import Blogs from "../Pages/Blogs/Blogs";
+import Register from "../Pages/LoginPage/RegistrationPage/Register";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <LoginPage />
+            },
+            {
+                path: '/register',
+                element: <Register />
             },
             {
                 path: '/blogs',

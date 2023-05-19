@@ -6,7 +6,6 @@ import logo from '../../../assets/logo.avif';
 
 const NavigationBar = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [username, setUsername] = useState('');
 
     const location = useLocation();
 
@@ -90,9 +89,6 @@ const NavigationBar = () => {
                                     <>
                                         <Nav.Link href="/my-toys">My Toys</Nav.Link>
                                         <Nav.Link href="/add-toy">Add A Toy</Nav.Link>
-                                        <Nav.Link className="username" onMouseEnter={() => setUsername('')}>
-                                            {username}
-                                        </Nav.Link>
                                     </>
                                 )}
                             </Nav>
