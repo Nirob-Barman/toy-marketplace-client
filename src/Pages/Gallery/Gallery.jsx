@@ -26,8 +26,8 @@ const Gallery = () => {
                                     className="img-fluid gallery-image"
                                 />
                                 <Card.Body>
-                                    <Card.Title>{image.alt}</Card.Title>
-                                    <Card.Text>{image.description}</Card.Text>
+                                    <Card.Title className='text-center'>{image.alt}</Card.Title>
+                                    {/* <Card.Text>{image.description}</Card.Text> */}
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -40,3 +40,62 @@ const Gallery = () => {
 };
 
 export default Gallery;
+
+
+
+// import React from 'react';
+// import { Carousel } from 'react-bootstrap';
+
+
+// const Gallery = () => {
+
+    
+//     const images = [
+//         'https://img.freepik.com/premium-photo/toy-car-isolated_130040-1833.jpg?w=740',
+//         'https://img.freepik.com/premium-photo/toy-car-isolated_130040-1833.jpg?w=740',
+//         'https://img.freepik.com/premium-photo/toy-car-isolated_130040-1833.jpg?w=740',
+//         // Add more image URLs as needed
+//     ];
+
+//     return (
+//         <Carousel
+//             indicators={false}
+//             prevIcon={<span className="carousel-control-prev-icon" />}
+//             nextIcon={<span className="carousel-control-next-icon" />}
+//         >
+//             {images.map((image, index) => (
+//                 <Carousel.Item key={index}>
+//                     <img src={image} alt={`Image ${index + 1}`} className="d-block w-100" />
+//                 </Carousel.Item>
+//             ))}
+//         </Carousel>
+//     );
+// };
+
+// export default Gallery;
+
+
+// import React from 'react';
+// import { Carousel, CarouselItem, Image } from 'react-bootstrap';
+
+// const Gallery = () => {
+//     const images = [
+//         'https://img.freepik.com/premium-photo/toy-car-isolated_130040-1833.jpg?w=740',
+//         'https://img.freepik.com/premium-photo/toy-car-isolated_130040-1833.jpg?w=740',
+//         'https://img.freepik.com/premium-photo/toy-car-isolated_130040-1833.jpg?w=740',
+//         // Add more image URLs as needed
+//     ];
+
+//     return (
+//         <Carousel style={{ height: '400px' }}>
+//             {images.map((image, index) => (
+//                 <CarouselItem key={index}>
+//                     <Image src={image} alt={`Image ${index + 1}`} fluid />
+//                 </CarouselItem>
+//             ))}
+//         </Carousel>
+//     );
+// };
+
+// export default Gallery;
+

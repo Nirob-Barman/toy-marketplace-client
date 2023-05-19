@@ -1,0 +1,53 @@
+[
+    {
+        "category": "Math Toys",
+        "toys": [
+            {
+                "picture": "math-toy-1.jpg",
+                "name": "Math Toy 1",
+                "price": "$1899.99",
+                "rating": 4.5
+            },
+            {
+                "picture": "math-toy-2.jpg",
+                "name": "Math Toy 2",
+                "price": "$14.99",
+                "rating": 4.2
+            }
+        ]
+    },
+    {
+        "category": "Language Toys",
+        "toys": [
+            {
+                "picture": "language-toy-1.jpg",
+                "name": "Language Toy 1",
+                "price": "$24.99",
+                "rating": 4.7
+            },
+            {
+                "picture": "language-toy-2.jpg",
+                "name": "Language Toy 2",
+                "price": "$12.99",
+                "rating": 4.0
+            }
+        ]
+    },
+    {
+        "category": "Engineering Toys",
+        "toys": [
+            {
+                "picture": "engineering-toy-1.jpg",
+                "name": "Engineering Toy 1",
+                "price": "$29.99",
+                "rating": 4.9
+            },
+            {
+                "picture": "engineering-toy-2.jpg",
+                "name": "Engineering Toy 2",
+                "price": "$17.99",
+                "rating": 4.3
+            }
+        ]
+    }
+]

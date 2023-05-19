@@ -10,6 +10,7 @@ import ReactTabs from "../Pages/Home/ReactTabs";
 import Register from "../Pages/LoginPage/RegistrationPage/Register";
 import Blogs from "../Pages/Blog/Blog";
 import AllToys from "../Pages/AllToysSection/AllToys";
+import ShopByCategory from "../Pages/ShopByCategory/ShopByCategory";
 
 const router = createBrowserRouter([
     {
@@ -21,9 +22,13 @@ const router = createBrowserRouter([
                 path: "/",
                 element: <Main />,
                 children: [
+                    // {
+                    //     path: "/",
+                    //     element: <ReactTabs />
+                    // }
                     {
                         path: "/",
-                        element: <ReactTabs />
+                        element: <ShopByCategory />
                     }
                 ]
             },
