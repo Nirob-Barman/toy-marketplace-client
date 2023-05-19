@@ -9,6 +9,7 @@ import LoginLayout from "../Layout/LoginLayout";
 import ReactTabs from "../Pages/Home/ReactTabs";
 import Register from "../Pages/LoginPage/RegistrationPage/Register";
 import Blogs from "../Pages/Blog/Blog";
+import AllToys from "../Pages/AllToysSection/AllToys";
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register />
+            },
+            {
+                path: '/all-toys',
+                element: <AllToys />
             },
             {
                 path: '/blogs',
