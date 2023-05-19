@@ -1,45 +1,29 @@
-import React, { useState } from 'react';
-import { Tab, Nav, Row, Col } from 'react-bootstrap';
+import React from 'react';
+import { Tab, Tabs, Card, Button } from 'react-bootstrap';
+import toyData from '../../../public/toyData.json';
 
-import toysData from '../../../public/toysData.json';
-
-const ShopByCategoryTabs = () => {
-    const [activeTab, setActiveTab] = useState(0);
-
-    const handleTabSelect = (index) => {
-        setActiveTab(index);
-    };
-
+const ShopByCategory = () => {
     return (
-        <Tab.Container activeKey={activeTab} onSelect={handleTabSelect}>
-            <Nav variant="tabs" className="mb-4">
-                {toysData.map((category, index) => (
-                    <Nav.Item key={index}>
-                        <Nav.Link eventKey={index}>{category.category}</Nav.Link>
-                    </Nav.Item>
-                ))}
-            </Nav>
-            <Tab.Content>
-                {toysData.map((category, index) => (
-                    <Tab.Pane key={index} eventKey={index}>
-                        <Row>
-                            {category.toys.map((toy, toyIndex) => (
-                                <Col key={toyIndex} sm={6} md={4}>
-                                    <div className="toy">
-                                        <img src={toy.picture} alt={toy.name} />
-                                        <h3>{toy.name}</h3>
-                                        <p>{toy.price}</p>
-                                        <p>{toy.rating}</p>
-                                        <button>View Details</button>
-                                    </div>
-                                </Col>
-                            ))}
-                        </Row>
-                    </Tab.Pane>
-                ))}
-            </Tab.Content>
-        </Tab.Container>
+        <Tabs defaultActiveKey={toyData.categories[0].name} id="category-tabs">
+            {toyData.categories.map((category) => (
+                <Tab key={category.name} eventKey={category.name} title={category.name}>
+                    {category.toys.map((toy) => (
+                        <Card key={toy.name}>
+                            <Card.Img
+                                style={{ width: '200px', height: '150px' }}
+                                variant="top" src={toy.picture} />
+                            <Card.Body>
+                                <Card.Title>{toy.name}</Card.Title>
+                                <Card.Text>Price: {toy.price}</Card.Text>
+                                <Card.Text>Rating: {toy.rating}</Card.Text>
+                                <Button variant="primary">View Details</Button>
+                            </Card.Body>
+                        </Card>
+                    ))}
+                </Tab>
+            ))}
+        </Tabs>
     );
 };
 
-export default ShopByCategoryTabs;
+export default ShopByCategory;

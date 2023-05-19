@@ -1,46 +1,100 @@
-import React, { useEffect, useState } from 'react';
-import { Table, Form, FormControl, Button } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Table, Form, Button } from 'react-bootstrap';
+import { Link, useLoaderData } from 'react-router-dom';
+
+// Toy data example
+// const toyData = [
+//     {
+//         seller: 'John Doe',
+//         toyName: 'Superhero Action Figure',
+//         subCategory: 'Action Figures',
+//         price: 9.99,
+//         quantity: 10,
+//     },
+//     {
+//         seller: 'Jane Smith',
+//         toyName: 'Building Blocks',
+//         subCategory: 'Educational',
+//         price: 19.99,
+//         quantity: 5,
+//     },
+//     {
+//         seller: 'Jane Smith',
+//         toyName: 'House Blocks',
+//         subCategory: 'Educational',
+//         price: 19.99,
+//         quantity: 5,
+//     },
+//     {
+//         seller: 'Jane Smith',
+//         toyName: 'Huge Blocks',
+//         subCategory: 'Educational',
+//         price: 19.99,
+//         quantity: 5,
+//     },
+//     // Add more toy data here...
+// ];
 
 const AllToys = () => {
-    const [toys, setToys] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
+    const [limit, setLimit] = useState(20);
 
-    // useEffect(() => {
-    //     // Fetch the list of toys from the server and update the toys state
-    //     // You can make an API request here to retrieve the toys data
-    //     const fetchToys = async () => {
-    //         // Example API call
-    //         const response = await fetch('/api/toys');
-    //         const data = await response.json();
-    //         setToys(data);
-    //     };
+    const toyData = useLoaderData();
+    console.log(toyData);
 
-    //     fetchToys();
-    // }, []);
+    const [filteredToys, setFilteredToys] = useState(toyData);
 
-    // Filter the toys based on the search query
-    const filteredToys = toys.filter(toy =>
-        toy.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    const handleSearch = (event) => {
+        setSearchTerm(event.target.value);
 
-    // Show 20 results by default
-    const limitedToys = filteredToys.slice(0, 20);
+        const filteredToys = toyData.filter((toy) =>
+            toy.toyName.toLowerCase().includes(event.target.value.toLowerCase())
+        );
+        setFilteredToys(filteredToys);
+    };
+
+    const handleLimitChange = (event) => {
+        setLimit(parseInt(event.target.value, 10));
+    };
+
+    const renderToys = () => {
+        return filteredToys.slice(0, limit).map((toy, index) => (
+            <tr key={index}>
+                <td>{toy.seller}</td>
+                <td>{toy.name}</td>
+                <td>{toy.subCategory}</td>
+                <td>{toy.price}</td>
+                <td>{toy.quantity}</td>
+                <td>
+                    <Link to='/single-toys'>
+                        <Button variant="primary">View Details</Button>
+                    </Link>
+                </td>
+
+            </tr>
+        ));
+    };
 
     return (
         <div>
             <h1>All Toys</h1>
-
-            {/* Search input field */}
-            <Form>
-                <FormControl
+            <Form.Group controlId="search">
+                <Form.Label>Search:</Form.Label>
+                <Form.Control
                     type="text"
                     value={searchTerm}
-                    onChange={e => setSearchTerm(e.target.value)}
-                    placeholder="Search by Toy Name"
+                    onChange={handleSearch}
+                    placeholder="Enter toy name"
                 />
-            </Form>
-
-            {/* Table to display the toys */}
+            </Form.Group>
+            <Form.Group controlId="limit">
+                <Form.Label>Show:</Form.Label>
+                <Form.Control as="select" value={limit} onChange={handleLimitChange}>
+                    <option>10</option>
+                    <option>20</option>
+                    <option>50</option>
+                </Form.Control>
+            </Form.Group>
             <Table striped bordered hover>
                 <thead>
                     <tr>
@@ -49,26 +103,18 @@ const AllToys = () => {
                         <th>Sub-category</th>
                         <th>Price</th>
                         <th>Available Quantity</th>
-                        <th>Actions</th>
+                        <th></th>
                     </tr>
                 </thead>
-                {/* <tbody>
-                    {limitedToys.map(toy => (
-                        <tr key={toy.id}>
-                            <td>{toy.seller ? toy.seller : 'N/A'}</td>
-                            <td>{toy.name}</td>
-                            <td>{toy.subCategory}</td>
-                            <td>{toy.price}</td>
-                            <td>{toy.quantity}</td>
-                            <td>
-                                <Button variant="primary">View Details</Button>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody> */}
+                <tbody>{renderToys()}</tbody>
             </Table>
         </div>
     );
 };
 
 export default AllToys;
+
+
+
+
+

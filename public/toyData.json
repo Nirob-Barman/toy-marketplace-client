@@ -1,0 +1,55 @@
+{
+    "categories": [
+        {
+            "name": "Sports Car",
+            "toys": [
+                {
+                    "picture": "https://img.freepik.com/free-vector/fast-car-concept-illustration_114360-3352.jpg?w=740&t=st=1684489076~exp=1684489676~hmac=829fcc93b6c1fe6ee1cc670b7ec67dda0f7c27a4cdd76d836838a3ee19f40f90",
+                    "name": "Sports Car 1",
+                    "price": "$100",
+                    "rating": 4.5
+                },
+                {
+                    "picture": "sports-car2.jpg",
+                    "name": "Sports Car 2",
+                    "price": "$150",
+                    "rating": 4.2
+                }
+            ]
+        },
+        {
+            "name": "Truck",
+            "toys": [
+                {
+                    "picture": "https://img.freepik.com/free-vector/fast-car-concept-illustration_114360-3352.jpg?w=740&t=st=1684489076~exp=1684489676~hmac=829fcc93b6c1fe6ee1cc670b7ec67dda0f7c27a4cdd76d836838a3ee19f40f90",
+                    "name": "Truck 1",
+                    "price": "$200",
+                    "rating": 4.8
+                },
+                {
+                    "picture": "truck2.jpg",
+                    "name": "Truck 2",
+                    "price": "$180",
+                    "rating": 4.4
+                }
+            ]
+        },
+        {
+            "name": "Regular Car",
+            "toys": [
+                {
+                    "picture": "car1.jpg",
+                    "name": "Regular Car 1",
+                    "price": "$80",
+                    "rating": 4.0
+                },
+                {
+                    "picture": "car2.jpg",
+                    "name": "Regular Car 2",
+                    "price": "$90",
+                    "rating": 4.3
+                }
+            ]
+        }
+    ]
+}

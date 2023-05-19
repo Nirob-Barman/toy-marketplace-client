@@ -11,6 +11,8 @@ import Register from "../Pages/LoginPage/RegistrationPage/Register";
 import Blogs from "../Pages/Blog/Blog";
 import AllToys from "../Pages/AllToysSection/AllToys";
 import ShopByCategory from "../Pages/ShopByCategory/ShopByCategory";
+import SingleToyDetails from "../Pages/AllToysSection/SingleToyDetails";
+import AddToy from "../Pages/AllToysSection/AddToy";
 
 const router = createBrowserRouter([
     {
@@ -26,10 +28,10 @@ const router = createBrowserRouter([
                     //     path: "/",
                     //     element: <ReactTabs />
                     // }
-                    {
-                        path: "/",
-                        element: <ShopByCategory />
-                    }
+                    // {
+                    //     path: "/",
+                    //     element: <ShopByCategory />
+                    // }
                 ]
             },
             {
@@ -42,11 +44,20 @@ const router = createBrowserRouter([
             },
             {
                 path: '/all-toys',
-                element: <AllToys />
+                element: <AllToys />,
+                loader: () => fetch('http://localhost:5000/all-toys')
             },
             {
                 path: '/blogs',
                 element: <Blogs />
+            },
+            {
+                path: '/single-toys',
+                element: <SingleToyDetails />
+            },
+            {
+                path: '/add-toy',
+                element: <AddToy />
             }
         ]
 

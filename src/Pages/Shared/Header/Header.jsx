@@ -10,6 +10,7 @@ import ReviewsAndRatings from '../../ReviewsAndRatings/ReviewsAndRatings';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
+import ShopByCategory from '../../ShopByCategory/ShopByCategory';
 
 const Header = () => {
 
@@ -19,9 +20,11 @@ const Header = () => {
 
     return (
         <Container data-aos="flip-left" className='my-5'>
-            <Banner />
-            <Gallery />
-            <ReactTabs />
+            {/* <Banner /> */}
+            {/* <Gallery /> */}
+
+            {/* <ReactTabs /> */}
+            <ShopByCategory />
 
             <Customization />
 
