@@ -1,0 +1,70 @@
+{
+    "categories": [
+        {
+            "category": "Sports Car",
+            "toys": [
+                {
+                    "id": 1,
+                    "picture": "sports_car1.jpg",
+                    "name": "Super Speedster",
+                    "price": 29.99,
+                    "rating": 4.5,
+                    "subcategory": "Sports Car",
+                    "seller": {
+                        "name": "Toy World",
+                        "email": "toyworld@example.com"
+                    },
+                    "quantity": 10,
+                    "description": "The Super Speedster is a high-performance sports car toy that will provide hours of fun for kids who love speed and excitement."
+                },
+                {
+                    "id": 2,
+                    "picture": "sports_car2.jpg",
+                    "name": "Turbo Racer",
+                    "price": 24.99,
+                    "rating": 4.2,
+                    "subcategory": "Sports Car",
+                    "seller": {
+                        "name": "Fun Toys Inc.",
+                        "email": "funtoys@example.com"
+                    },
+                    "quantity": 5,
+                    "description": "Experience the thrill of racing with the Turbo Racer toy car. Its sleek design and powerful engine make it perfect for competitive play."
+                }
+            ]
+        },
+        {
+            "category": "Truck",
+            "toys": [
+                {
+                    "id": 3,
+                    "picture": "truck1.jpg",
+                    "name": "Monster Truck",
+                    "price": 39.99,
+                    "rating": 4.7,
+                    "subcategory": "Truck",
+                    "seller": {
+                        "name": "Toy Emporium",
+                        "email": "toyemporium@example.com"
+                    },
+                    "quantity": 8,
+                    "description": "Get ready for some off-road adventures with the Monster Truck toy. Its large wheels and rugged design can conquer any terrain."
+                },
+                {
+                    "id": 4,
+                    "picture": "truck2.jpg",
+                    "name": "Fire Rescue Truck",
+                    "price": 32.99,
+                    "rating": 4.4,
+                    "subcategory": "Truck",
+                    "seller": {
+                        "name": "Kids Toys Co.",
+                        "email": "kidstoys@example.com"
+                    },
+                    "quantity": 3,
+                    "description": "Be a hero with the Fire Rescue Truck toy. It comes with extendable ladders and realistic fire rescue accessories for exciting playtime."
+                }
+            ]
+        }
+    ]
+}

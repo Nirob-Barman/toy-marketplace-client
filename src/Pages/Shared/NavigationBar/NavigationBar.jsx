@@ -20,17 +20,17 @@ const NavigationBar = () => {
             .catch(error => console.log(error));
     }
 
-    const handleLogin = () => {
-        // Handle login logic here
-        // setIsLoggedIn(true);
-        // setUsername('John Doe'); 
-    };
+    // const handleLogin = () => {
+    //     // Handle login logic here
+    //     // setIsLoggedIn(true);
+    //     // setUsername('John Doe'); 
+    // };
 
-    const handleLogout = () => {
-        // Handle logout logic here
-        // setIsLoggedIn(false);
-        // setUsername('');
-    };
+    // const handleLogout = () => {
+    //     // Handle logout logic here
+    //     // setIsLoggedIn(false);
+    //     // setUsername('');
+    // };
 
     // const handleUsernameHover = () => {
     //     // Handle username hover behavior here
@@ -63,13 +63,12 @@ const NavigationBar = () => {
                                 ToyVerse
                             </Navbar.Brand>
 
-
                             <Nav className="mx-auto gap-5">
                                 <Link to="/" className={`text-decoration-none ${location.pathname === '/' ? 'fs-6 text-uppercase text-danger text-decoration-none' : ''}`}
                                 // className={location.pathname === '/' ? 'text-danger text-decoration-none' : ''}
                                 >Home</Link>
-                                <Link to="/allToys"
-                                    className={`text-decoration-none ${location.pathname === '/allToys' ? 'fs-6 text-uppercase text-danger text-decoration-none' : ''}`}
+                                <Link to="/all-toys"
+                                    className={`text-decoration-none ${location.pathname === '/all-toys' ? 'fs-6 text-uppercase text-danger text-decoration-none' : ''}`}
                                 // className={location.pathname === '/blog' ? 'text-danger text-decoration-none' : ''}
                                 >All Toys</Link>
                                 <Link to="/blogs"
@@ -78,17 +77,18 @@ const NavigationBar = () => {
                                 >Blogs</Link>
                             </Nav>
 
-                            {/* <Nav className="mx-auto">
-                                <Nav.Link href="/">Home</Nav.Link>
-                                <Nav.Link href="/all-toys">All Toys</Nav.Link>
-                                <Nav.Link href="/blogs">Blogs</Nav.Link>
-                            </Nav> */}
-
-                            <Nav>
+                            
+                            <Nav className="mx-auto gap-5">
                                 {user && (
                                     <>
-                                        <Nav.Link href="/my-toys">My Toys</Nav.Link>
-                                        <Nav.Link href="/add-toy">Add A Toy</Nav.Link>
+                                        <Link to="/my-toys" className={`text-decoration-none ${location.pathname === '/my-toys' ? 'fs-6 text-uppercase text-danger text-decoration-none' : ''}`}
+                                        >My Toys
+                                        </Link>
+                                        <Link to="/add-toy" className={`text-decoration-none ${location.pathname === '/add-toy' ? 'fs-6 text-uppercase text-danger text-decoration-none' : ''}`}
+                                        >Add A Toy
+                                        </Link>
+                                        {/* <Nav.Link href="/my-toys">My Toys</Nav.Link>
+                                        <Nav.Link href="/add-toy">Add A Toy</Nav.Link> */}
                                     </>
                                 )}
                             </Nav>
