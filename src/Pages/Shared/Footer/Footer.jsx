@@ -1,8 +1,7 @@
-import React from 'react';
-import { Container, Row, Col, Nav, Image } from 'react-bootstrap';
+
+import { Container, Row, Col, Image } from 'react-bootstrap';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import logo from '../../../assets/logo.avif'
-import { Link } from 'react-router-dom';
 
 
 const Footer = () => {

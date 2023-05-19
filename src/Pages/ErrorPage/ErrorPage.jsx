@@ -3,6 +3,9 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import notFoundImage from '../../assets/notFoundImage.png';
 
 const ErrorPage = () => {
+    const handleGoBack = () => {
+        window.history.back();
+    };
 
     return (
         <Container fluid className="not-found-page my-5">
@@ -12,9 +15,12 @@ const ErrorPage = () => {
                     <p>Oops! The page you're looking for doesn't exist.</p>
                     <p>URL: <strong>{window.location.href}</strong></p>
                     <img src={notFoundImage} alt="404 Image" className="img-fluid" />
-                    <Button className='mt-5' variant="outline-primary" href="/">Go to Homepage</Button>
+                    <div className="d-flex flex-wrap justify-content-center gap-3 mt-3">
+                        <Button variant="outline-primary" onClick={handleGoBack}>Go to Previous Page</Button>
+                        <Button variant="outline-primary" href="/">Go to Homepage</Button>
+                    </div>
                 </Col>
-                
+
             </Row>
         </Container>
     );
