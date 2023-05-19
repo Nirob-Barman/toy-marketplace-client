@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { Navbar, Nav, NavDropdown, Button, Container, Image } from 'react-bootstrap';
+import { Navbar, Nav, Button, Container, Image } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import logo from '../../../assets/logo.avif';
 
 const NavigationBar = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const location = useLocation();
 
@@ -65,19 +65,16 @@ const NavigationBar = () => {
 
                             <Nav className="mx-auto gap-5">
                                 <Link to="/" className={`text-decoration-none ${location.pathname === '/' ? 'fs-6 text-uppercase text-danger text-decoration-none' : ''}`}
-                                // className={location.pathname === '/' ? 'text-danger text-decoration-none' : ''}
                                 >Home</Link>
                                 <Link to="/all-toys"
                                     className={`text-decoration-none ${location.pathname === '/all-toys' ? 'fs-6 text-uppercase text-danger text-decoration-none' : ''}`}
-                                // className={location.pathname === '/blog' ? 'text-danger text-decoration-none' : ''}
                                 >All Toys</Link>
                                 <Link to="/blogs"
                                     className={`text-decoration-none ${location.pathname === '/blogs' ? 'fs-6 text-uppercase text-danger text-decoration-none' : ''}`}
-                                // className={location.pathname === '/about' ? 'text-danger text-decoration-none' : ''}
                                 >Blogs</Link>
                             </Nav>
 
-                            
+
                             <Nav className="mx-auto gap-5">
                                 {user && (
                                     <>
@@ -116,10 +113,9 @@ const NavigationBar = () => {
                                 }
 
                                 {user ?
-                                    <Button onClick={handleLogOut} variant="secondary">Logout</Button> :
-                                    <Link to="/login">
-                                        <Button variant="secondary">Login</Button>
-                                    </Link>
+                                    <Button onClick={handleLogOut} variant="secondary">Logout</Button>
+                                    :
+                                    <Link to="/login"><Button variant="secondary">Login</Button></Link>
                                 }
 
                             </Nav>
