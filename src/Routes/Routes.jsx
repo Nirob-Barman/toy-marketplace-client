@@ -7,8 +7,8 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import LoginPage from "../Pages/LoginPage/LoginPage";
 import LoginLayout from "../Layout/LoginLayout";
 import ReactTabs from "../Pages/Home/ReactTabs";
-import Blogs from "../Pages/Blogs/Blogs";
 import Register from "../Pages/LoginPage/RegistrationPage/Register";
+import Blogs from "../Pages/Blog/Blog";
 
 const router = createBrowserRouter([
     {
