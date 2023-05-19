@@ -5,6 +5,7 @@ import Gallery from '../../Gallery/Gallery';
 import ReactTabs from '../../Home/ReactTabs';
 import SocialSharing from '../../SocialSharing/SocialSharing';
 import Customization from '../../Customization/Customization';
+import ReviewsAndRatings from '../../ReviewsAndRatings/ReviewsAndRatings';
 
 const Header = () => {
     return (
@@ -15,9 +16,12 @@ const Header = () => {
 
             <Customization />
 
+
+            <ReviewsAndRatings />
+
             <SocialSharing />
 
-            Extra Two section
+
         </Container>
     );
 };
