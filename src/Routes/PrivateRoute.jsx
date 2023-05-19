@@ -9,7 +9,12 @@ const PrivateRoute = ({ children }) => {
     // console.log(location);
     // console.log('User in Private Route', user);
     if (loading) {
-        return <Spinner animation="border" variant="primary" />
+        // return <Spinner animation="border" variant="primary" />
+        return (
+            <div className="d-flex justify-content-center align-items-center vh-100">
+                <Spinner animation="border" variant="primary" />
+            </div>
+        );
     }
 
     if (user) {
