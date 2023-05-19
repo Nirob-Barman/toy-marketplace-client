@@ -18,18 +18,16 @@ const Header = () => {
     }, []);
 
     return (
-        <Container data-aos="fade-up" className='my-5'>
+        <Container data-aos="flip-left" className='my-5'>
             <Banner />
             <Gallery />
             <ReactTabs />
 
             <Customization />
 
-
             <ReviewsAndRatings />
 
             <SocialSharing />
-
 
         </Container>
     );
