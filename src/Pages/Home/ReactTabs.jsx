@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Tab, Nav, Card, Button } from 'react-bootstrap';
 
 const MyTabs = () => {
@@ -60,6 +60,31 @@ const MyTabs = () => {
         ],
     };
 
+    // const [toys, setToys] = useState([]);
+    const [collection, setCollection] = useState([])
+
+    // useEffect(() => {
+    //     fetch('toys.json')
+    //         .then(res => res.json())
+    //         // .then(data => console.log(data))
+    //         .then(data => setToys(data))
+    //         .catch(error => console.error(error))
+    // }, [])
+
+    useEffect(() => {
+        fetch('collection.json')
+            .then(res => res.json())
+            // .then(data => console.log(data))
+            .then(data => setCollection(data))
+            .catch(error => console.error(error))
+    }, [])
+
+    console.log(collection);
+    collection.map(t => {
+        console.log(t);
+    });
+
+
     return (
         <Tab.Container activeKey={activeTab} onSelect={handleTabSelect}>
             <Nav variant="pills">
@@ -74,31 +99,13 @@ const MyTabs = () => {
                 </Nav.Item>
             </Nav>
 
-            {/* <Tab.Content>
-                {Object.keys(toysData).map((tabKey) => (
-                    <Tab.Pane key={tabKey} eventKey={tabKey}>
-                        <h3>{tabKey === 'mathToys' ? 'Math Toys' : tabKey === 'languageToys' ? 'Language Toys' : 'Science Toys'}</h3>
-                        {toysData[tabKey].map((toy) => (
-                            <Card key={toy.id}>
-                                <Card.Img variant="top" src={toy.image} />
-                                <Card.Body>
-                                    <Card.Title>{toy.name}</Card.Title>
-                                    <Card.Text>
-                                        Price: ${toy.price}<br />
-                                        Rating: {toy.rating}
-                                    </Card.Text>
-                                    <Button variant="primary">View Details</Button>
-                                </Card.Body>
-                            </Card>
-                        ))}
-                    </Tab.Pane>
-                ))}
-            </Tab.Content> */}
 
             <Tab.Content>
                 {Object.entries(toysData).map(([tabKey, toys]) => (
                     <Tab.Pane key={tabKey} eventKey={tabKey}>
                         <h3>{tabKey === 'mathToys' ? 'Math Toys' : tabKey === 'languageToys' ? 'Language Toys' : 'Science Toys'}</h3>
+                        
+                        
                         {toys.map((toy) => (
                             <Card key={toy.id}>
                                 {/* <Card.Img variant="top" src={toy.image} /> */}
@@ -115,6 +122,10 @@ const MyTabs = () => {
                     </Tab.Pane>
                 ))}
             </Tab.Content>
+
+
+
+            
         </Tab.Container>
     );
 };
