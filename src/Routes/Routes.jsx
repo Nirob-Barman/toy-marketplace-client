@@ -55,8 +55,11 @@ const router = createBrowserRouter([
                 element: <Blogs />
             },
             {
-                path: '/single-toys',
-                element: <SingleToyDetails />
+                path: '/singleToys/:id',
+                element: <PrivateRoute>
+                    <SingleToyDetails />
+                </PrivateRoute>,
+                loader: ({ params }) => fetch(`https://toy-marketplace-server-bay.vercel.app/toys/${params.id}`)
             },
             {
                 path: '/my-toys',

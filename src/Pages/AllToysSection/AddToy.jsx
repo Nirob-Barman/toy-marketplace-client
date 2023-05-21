@@ -119,6 +119,7 @@ const AddToy = () => {
                         <Form.Control
                             type="text"
                             value={subCategory}
+                            placeholder='category type should be sports, regular or police'
                             onChange={(e) => setSubCategory(e.target.value)}
                         />
                     </Form.Group>
