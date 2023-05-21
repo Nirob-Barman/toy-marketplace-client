@@ -440,11 +440,14 @@ const MyToys = () => {
                                 <div>
                                     <Card className="mb-4">
                                         <Card.Body className="text-center">
-                                            <Card.Title>{toy.name}</Card.Title>
-                                            <Card.Text>Seller: {toy.sellerName}</Card.Text>
-                                            <Card.Text>Price: ${toy.price}</Card.Text>
-                                            <Card.Text>Rating: {toy.rating}</Card.Text>
-                                            <Card.Text>Description: {toy.description}</Card.Text>
+                                            <Card.Title>{toy?.name}</Card.Title>
+                                            <Card.Text>Seller: {toy?.sellerName}</Card.Text>
+                                            <Card.Text>Seller: {toy?.sellerEmail}</Card.Text>
+                                            <Card.Text>Seller: {toy?.subCategory}</Card.Text>
+                                            <Card.Text>Price: ${toy?.price}</Card.Text>
+                                            <Card.Text>Rating: {toy?.rating}</Card.Text>
+                                            <Card.Text>Rating: {toy?.quantity}</Card.Text>
+                                            <Card.Text>Description: {toy?.description}</Card.Text>
                                             <div className="mx-5 px-5 d-flex justify-content-between">
                                                 <Button variant="secondary" onClick={() => handleUpdateToyData(toy)}>
                                                     Update Toys
