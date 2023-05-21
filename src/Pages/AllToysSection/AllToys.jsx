@@ -140,7 +140,7 @@
 
 import React, { useState } from 'react';
 import { Table, Form, Button, Modal, Container } from 'react-bootstrap';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
 
 const AllToys = () => {
@@ -207,16 +207,20 @@ const AllToys = () => {
                                 <td>{toy.price}</td>
                                 <td>{toy.availableQuantity}</td>
                                 <td>
-                                    <Button variant="primary" onClick={() => handleViewDetails(toy)}>
-                                        View Details
-                                    </Button>
+                                    <Link to={`/singleToys/${toy._id}`}>
+                                        <Button variant="primary" onClick={() => handleViewDetails(toy)}>
+                                            View Details
+                                        </Button>
+                                    </Link>
                                 </td>
                             </tr>
                         ))}
                     </tbody>
                 </Table>
 
-                <Modal show={showModal} onHide={handleCloseModal}>
+                <Modal
+                    // show={showModal}
+                    onHide={handleCloseModal}>
                     <Modal.Header closeButton>
                         <Modal.Title>Toy Details</Modal.Title>
                     </Modal.Header>
