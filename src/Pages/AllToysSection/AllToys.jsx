@@ -200,12 +200,12 @@ const AllToys = () => {
                     </thead>
                     <tbody>
                         {displayedToys.map((toy) => (
-                            <tr key={toy._id}>
-                                <td>{toy.sellerName}</td>
-                                <td>{toy.name}</td>
-                                <td>{toy.subCategory}</td>
-                                <td>{toy.price}</td>
-                                <td>{toy.availableQuantity}</td>
+                            <tr key={toy?._id}>
+                                <td>{toy?.sellerName}</td>
+                                <td>{toy?.name}</td>
+                                <td>{toy?.subCategory}</td>
+                                <td>{toy?.price}</td>
+                                <td>{toy?.quantity}</td>
                                 <td>
                                     <Link to={`/singleToys/${toy._id}`}>
                                         <Button variant="primary" onClick={() => handleViewDetails(toy)}>
@@ -231,7 +231,7 @@ const AllToys = () => {
                                 <p>Toy Name: {selectedToy.name}</p>
                                 <p>Sub-category: {selectedToy.subCategory}</p>
                                 <p>Price: {selectedToy.price}</p>
-                                <p>Available Quantity: {selectedToy.availableQuantity}</p>
+                                <p>Available Quantity: {selectedToy.quantity}</p>
                                 <p>Detail Description: {selectedToy.description}</p>
                                 {/* Add additional toy details as needed */}
                                 <img src={selectedToy.pictureUrl} alt="Toy Image" />
