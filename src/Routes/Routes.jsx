@@ -17,7 +17,6 @@ import MyToys from "../Pages/AllToysSection/MyToys";
 import PrivateRoute from "./PrivateRoute";
 
 
-
 const router = createBrowserRouter([
     {
         path: "/",

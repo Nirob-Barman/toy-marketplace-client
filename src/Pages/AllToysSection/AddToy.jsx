@@ -9,7 +9,7 @@ const AddToy = () => {
     useTitle('AddToy');
 
     const { user } = useContext(AuthContext);
-    console.log(user);
+    // console.log(user);
 
     const [pictureUrl, setPictureUrl] = useState('');
     const [name, setName] = useState('');
