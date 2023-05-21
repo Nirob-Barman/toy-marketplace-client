@@ -280,7 +280,7 @@
 
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import { Container } from "react-bootstrap";
+import { Button, Card, Container } from "react-bootstrap";
 import Swal from "sweetalert2";
 import useTitle from "../../hooks/useTitle";
 
@@ -394,7 +394,7 @@ const MyToys = () => {
     return (
         <Container className="border my-5 bg-light">
             <div>
-                <h1>My Toys</h1>
+                <h1 className="text-center">My Toys</h1>
                 {toys.map((toy) => (
                     <div key={toy._id}>
                         {editingToy === toy ? (
@@ -437,28 +437,27 @@ const MyToys = () => {
                                 </button>
                             </div>
                         ) : (
-                            <div>
-                                <h3>{toy.name}</h3>
-                                <p>Seller: {toy.sellerName}</p>
-                                <p>Price: ${toy.price}</p>
-                                <p>Rating: {toy.rating}</p>
-                                <p>Description: {toy.description}</p>
-                                <button
-                                    className="btn btn-secondary"
-                                    onClick={() => handleUpdateToyData(toy)}
-                                >
-                                    Update Toys
-                                </button>
-                                {' '}
-                                <button
-                                    className="btn btn-secondary"
-                                    onClick={() => handleDelete(toy._id)}
-                                >
-                                    Delete
-                                </button>
-                            </div>
+                                <div>
+                                    <Card className="mb-4">
+                                        <Card.Body className="text-center">
+                                            <Card.Title>{toy.name}</Card.Title>
+                                            <Card.Text>Seller: {toy.sellerName}</Card.Text>
+                                            <Card.Text>Price: ${toy.price}</Card.Text>
+                                            <Card.Text>Rating: {toy.rating}</Card.Text>
+                                            <Card.Text>Description: {toy.description}</Card.Text>
+                                            <div className="mx-5 px-5 d-flex justify-content-between">
+                                                <Button variant="secondary" onClick={() => handleUpdateToyData(toy)}>
+                                                    Update Toys
+                                                </Button>{" "}
+                                                <Button variant="secondary" onClick={() => handleDelete(toy._id)}>
+                                                    Delete
+                                                </Button>
+                                            </div>
+                                        </Card.Body>
+                                    </Card>
+                                </div>
+
                         )}
-                        <hr />
                     </div>
                 ))}
             </div>
