@@ -2,9 +2,12 @@ import React, { useContext, useState } from 'react';
 import { Table, Form, Button, Container, Modal } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 
 const AllToys = () => {
+
+    useTitle('AllToys');
 
     const { user } = useContext(AuthContext);
 

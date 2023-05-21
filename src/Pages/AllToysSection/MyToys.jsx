@@ -3,8 +3,11 @@ import { Table, Button, Container, Modal, Form } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../providers/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const MyToys = () => {
+
+    useTitle('MyToys');
 
     const { user } = useContext(AuthContext);
 

@@ -4,8 +4,11 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import Toast from 'react-bootstrap/Toast';
 import { FaGoogle } from 'react-icons/fa';
+import useTitle from '../../hooks/useTitle';
 
 const LoginPage = () => {
+
+    useTitle('Login');
 
     const [error, setError] = useState('');
 

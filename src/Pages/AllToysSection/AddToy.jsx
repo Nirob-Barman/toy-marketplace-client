@@ -2,8 +2,12 @@ import React, { useContext, useState } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import Swal from 'sweetalert2'
 import { AuthContext } from '../../providers/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const AddToy = () => {
+
+    useTitle('AddToy');
+
     const { user } = useContext(AuthContext);
     console.log(user);
 

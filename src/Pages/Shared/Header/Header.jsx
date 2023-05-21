@@ -11,8 +11,11 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
 import ShopByCategory from '../../ShopByCategory/ShopByCategory';
+import useTitle from '../../../hooks/useTitle';
 
 const Header = () => {
+
+    useTitle('Home');
 
     useEffect(() => {
         AOS.init();
