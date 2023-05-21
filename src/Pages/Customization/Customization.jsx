@@ -33,7 +33,7 @@ const Customization = () => {
     };
 
     return (
-        <Container className="my-3">
+        <Container className="my-5 py-5">
             <h2 className="text-center mb-4">Customize Your Toy Car</h2>
             <Row className="mb-4">
                 <Col md={6} className="mb-2">
