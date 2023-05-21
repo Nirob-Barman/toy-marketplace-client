@@ -4,7 +4,7 @@ import toyData from '../../../public/toyData.json';
 
 const ShopByCategory = () => {
     return (
-        <Tabs defaultActiveKey={toyData.categories[0].name} id="category-tabs">
+        <Tabs variant="pills" defaultActiveKey={toyData.categories[0].name} id="category-tabs">
             {toyData.categories.map((category) => (
                 <Tab key={category.name} eventKey={category.name} title={category.name}>
                     {category.toys.map((toy) => (

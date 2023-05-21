@@ -10,7 +10,7 @@
                     "rating": 4.5
                 },
                 {
-                    "picture": "sports-car2.jpg",
+                    "picture": "https://img.freepik.com/premium-vector/sporting-car-illustration_104045-998.jpg?w=740",
                     "name": "Sports Car 2",
                     "price": "$150",
                     "rating": 4.2
@@ -21,13 +21,13 @@
             "name": "Truck",
             "toys": [
                 {
-                    "picture": "https://img.freepik.com/free-vector/fast-car-concept-illustration_114360-3352.jpg?w=740&t=st=1684489076~exp=1684489676~hmac=829fcc93b6c1fe6ee1cc670b7ec67dda0f7c27a4cdd76d836838a3ee19f40f90",
+                    "picture": "https://img.freepik.com/free-photo/green-truck-with-white-trailer-road_1340-32388.jpg?w=740&t=st=1684603123~exp=1684603723~hmac=2016e747b9d3a28fe627bdc150c93e17758db2b598c90d6d2ecd761d88110bad",
                     "name": "Truck 1",
                     "price": "$200",
                     "rating": 4.8
                 },
                 {
-                    "picture": "truck2.jpg",
+                    "picture": "https://img.freepik.com/free-photo/red-truck-driving-road-with-mountains-background_1340-32391.jpg?w=740&t=st=1684603125~exp=1684603725~hmac=eecae79fc63875bdbf8f7d85a0e4a3659a52257e93ec52b9d0b8c32c645ede56",
                     "name": "Truck 2",
                     "price": "$180",
                     "rating": 4.4
@@ -38,13 +38,13 @@
             "name": "Regular Car",
             "toys": [
                 {
-                    "picture": "car1.jpg",
+                    "picture": "https://img.freepik.com/free-vector/hand-drawn-muscle-car-illustration_23-2149432254.jpg?w=740&t=st=1684603197~exp=1684603797~hmac=be1da6de0ed262b6a73a276051ed464bf41e43b36d9a3ac40409aef4eb512c93",
                     "name": "Regular Car 1",
                     "price": "$80",
                     "rating": 4.0
                 },
                 {
-                    "picture": "car2.jpg",
+                    "picture": "https://img.freepik.com/free-vector/red-sedan-car-cartoon-style-isolated-white-background_1308-64900.jpg?w=900&t=st=1684603189~exp=1684603789~hmac=963ed7702a170749990e6747d5e54fcc77c473a0e7231d888fc5f3d3ddd09784",
                     "name": "Regular Car 2",
                     "price": "$90",
                     "rating": 4.3

@@ -104,8 +104,8 @@ const MyTabs = () => {
                 {Object.entries(toysData).map(([tabKey, toys]) => (
                     <Tab.Pane key={tabKey} eventKey={tabKey}>
                         <h3>{tabKey === 'mathToys' ? 'Math Toys' : tabKey === 'languageToys' ? 'Language Toys' : 'Science Toys'}</h3>
-                        
-                        
+
+
                         {toys.map((toy) => (
                             <Card key={toy.id}>
                                 {/* <Card.Img variant="top" src={toy.image} /> */}
@@ -125,7 +125,7 @@ const MyTabs = () => {
 
 
 
-            
+
         </Tab.Container>
     );
 };

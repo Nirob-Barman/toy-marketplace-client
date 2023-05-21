@@ -13,6 +13,10 @@ import AllToys from "../Pages/AllToysSection/AllToys";
 import ShopByCategory from "../Pages/ShopByCategory/ShopByCategory";
 import SingleToyDetails from "../Pages/AllToysSection/SingleToyDetails";
 import AddToy from "../Pages/AllToysSection/AddToy";
+import MyToys from "../Pages/AllToysSection/MyToys";
+import PrivateRoute from "./PrivateRoute";
+
+
 
 const router = createBrowserRouter([
     {
@@ -45,7 +49,7 @@ const router = createBrowserRouter([
             {
                 path: '/all-toys',
                 element: <AllToys />,
-                loader: () => fetch('http://localhost:5000/all-toys')
+                loader: () => fetch('https://toy-marketplace-server-bay.vercel.app/toys')
             },
             {
                 path: '/blogs',
@@ -54,6 +58,14 @@ const router = createBrowserRouter([
             {
                 path: '/single-toys',
                 element: <SingleToyDetails />
+            },
+            {
+                path: '/my-toys',
+                element: <PrivateRoute>
+                    <MyToys />
+                </PrivateRoute>
+                ,
+                loader: () => fetch('https://toy-marketplace-server-bay.vercel.app/toys')
             },
             {
                 path: '/add-toy',

@@ -1,7 +1,10 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 
-const SingleToyDetails = ({ toy }) => {
+const SingleToyDetails = () => {
+
+    const toy = '';
+
     return (
         <Card style={{ width: '18rem' }}>
             single toy

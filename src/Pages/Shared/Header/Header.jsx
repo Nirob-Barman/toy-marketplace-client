@@ -20,8 +20,8 @@ const Header = () => {
 
     return (
         <Container data-aos="flip-left" className='my-5'>
-            {/* <Banner /> */}
-            {/* <Gallery /> */}
+            <Banner />
+            <Gallery />
 
             {/* <ReactTabs /> */}
             <ShopByCategory />
