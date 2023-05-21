@@ -9,11 +9,11 @@ const ToysCard = ({ toy }) => {
 
             </figure>
             <div className="card-body w-full">
-                <h2>{toy.sellerName}</h2>
-                <p>{toy.name}</p>
-                <p>{toy.subCategory}</p>
-                <p>{toy.price}</p>
-                <p>{toy.quantity}</p>
+                <h2>Seller : {toy.sellerName}</h2>
+                <p>Toy Name : {toy.name}</p>
+                <p>Category : {toy.subCategory}</p>
+                <p>Price : {toy.price}</p>
+                <p>Available : {toy.quantity}</p>
                 <Link to={`/singleToys/${toy._id}`}>
                     <button className="btn btn-secondary text-white"> View Details</button>
                 </Link>
