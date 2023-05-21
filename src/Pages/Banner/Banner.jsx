@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from "react";
 import { Container, Button, Badge } from 'react-bootstrap';
 
@@ -28,9 +27,8 @@ const Banner = () => {
 
     return (
         <div className="banner">
-            <Container ref={containerRef} style={{ border: "1px solid black", background: "linear-gradient(to bottom, #9b59b6, #8e44ad)", padding: "20px", margin: "20px" }}>
-                {/* The rest of your code */}
-                <div className="banner-content">
+            <Container ref={containerRef} className="p-4" style={{ border: "1px solid black", background: "linear-gradient(to bottom, #9b59b6, #8e44ad)" }}>
+                <div className="d-flex flex-column align-items-center justify-content-center text-center">
                     <h1>Welcome to Toyverse!</h1>
                     <p>
                         <marquee behavior="scroll" direction="left">

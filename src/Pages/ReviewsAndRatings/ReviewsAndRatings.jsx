@@ -26,9 +26,11 @@ const ReviewsAndRatings = () => {
 
     return (
         <Container>
-            <h2 className="text-center mb-4">Reviews and Ratings</h2>
+            <div className="text-center mb-4">
+                <h2>Reviews and Ratings</h2>
+            </div>
             {reviews.length === 0 ? (
-                <p>No reviews yet. Be the first to write a review!</p>
+                <p className="text-center">No reviews yet. Be the first to write a review!</p>
             ) : (
                 reviews.map((review, index) => (
                     <Card key={index} className="mb-3">
@@ -39,42 +41,47 @@ const ReviewsAndRatings = () => {
                     </Card>
                 ))
             )}
-            <h4>Write a Review</h4>
-            <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="rating">
-                    <Form.Label>Rating:</Form.Label>
-                    <div>
-                        {[1, 2, 3, 4, 5].map((star) => (
-                            <label key={star}>
-                                <input
-                                    type="radio"
-                                    name="rating"
-                                    value={star}
-                                    onClick={() => handleRatingSelection(star)}
-                                />
-                                <FaStar
-                                    className="star-icon"
-                                    color={star <= rating ? "gold" : "gray"}
-                                    size={24}
-                                />
-                            </label>
-                        ))}
+            <div className="text-center">
+                <h4>Write a Review</h4>
+                <Form onSubmit={handleSubmit} className="row g-3">
+                    <Form.Group controlId="rating" className="col-md-6">
+                        <Form.Label>Rating:</Form.Label>
+                        <div>
+                            {[1, 2, 3, 4, 5].map((star) => (
+                                <label key={star} className="d-inline-block">
+                                    <input
+                                        type="radio"
+                                        name="rating"
+                                        value={star}
+                                        onClick={() => handleRatingSelection(star)}
+                                    />
+                                    <FaStar
+                                        className="star-icon"
+                                        color={star <= rating ? "gold" : "gray"}
+                                        size={24}
+                                    />
+                                </label>
+                            ))}
+                        </div>
+                    </Form.Group>
+                    <Form.Group controlId="comment" className="col-md-6">
+                        <Form.Label>Comment:</Form.Label>
+                        <Form.Control
+                            as="textarea"
+                            rows={4}
+                            value={comment}
+                            onChange={(e) => setComment(e.target.value)}
+                        />
+                    </Form.Group>
+                    <div className="text-center">
+                        <Button variant="primary" type="submit">
+                            Submit
+                        </Button>
                     </div>
-                </Form.Group>
-                <Form.Group controlId="comment">
-                    <Form.Label>Comment:</Form.Label>
-                    <Form.Control
-                        as="textarea"
-                        rows={4}
-                        value={comment}
-                        onChange={(e) => setComment(e.target.value)}
-                    />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
-            </Form>
+                </Form>
+            </div>
         </Container>
+
     );
 };
 

@@ -80,14 +80,120 @@
 
 
 
+// import React, { useEffect, useState } from "react";
+// import { Link } from "react-router-dom";
+// import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+// import ToysCard from "./ToysCard";
+// import './ShopByCategory';
+// import { Container, Spinner } from "react-bootstrap";
+
+// const ShopByCategory = () => {
+//     const [toys, setToys] = useState([]);
+//     const [isLoading, setIsLoading] = useState(true);
+
+//     useEffect(() => {
+//         fetchToys();
+//     }, []);
+
+//     const fetchToys = async () => {
+//         try {
+//             const response = await fetch("https://toy-marketplace-server-bay.vercel.app/toys");
+//             if (response.ok) {
+//                 const data = await response.json();
+//                 setToys(data);
+//             } else {
+//                 throw new Error("Failed to fetch toys");
+//             }
+//         } catch (error) {
+//             console.error("Failed to fetch toys:", error);
+//         } finally {
+//             setIsLoading(false);
+//         }
+//     };
+
+//     console.log(toys);
+
+//     const filterToysBySubcategory = (subcategory) => {
+//         return toys.filter((toy) => toy.subCategory === subcategory);
+//     };
+//     return (
+//         <div className="tabs">
+//             <Container>
+//                 <div className="text-center">
+//                     Select each category to show different toys
+//                 </div>
+//             </Container>
+//             <Tabs >
+//                 <TabList>
+//                     <Tab className="tab">sports car</Tab>
+//                     <Tab className="tab">regular car</Tab>
+//                     <Tab className="tab">mini police car</Tab>
+//                 </TabList>
+
+//                 <TabPanel>
+//                     <h2>sports car</h2>
+//                     {isLoading ? (
+//                         <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
+//                             <Spinner animation="border" role="status" variant="primary">
+//                                 <span className="sr-only">Loading...</span>
+//                             </Spinner>
+//                         </Container>
+//                     ) : (
+//                         filterToysBySubcategory("sports")
+//                             .slice(0, 2)
+//                             .map((toy) => (
+//                                 // console.log(toy.name)
+//                                 <ToysCard key={toy._id} toy={toy}></ToysCard>
+//                             ))
+//                     )}
+//                 </TabPanel>
+
+//                 <TabPanel >
+//                     <h2>regular car</h2>
+//                     {isLoading ? (
+//                         <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
+//                             <Spinner animation="border" role="status" variant="primary">
+//                                 <span className="sr-only">Loading...</span>
+//                             </Spinner>
+//                         </Container>
+//                     ) : (
+//                         filterToysBySubcategory("regular").slice(0, 2).map((toy) => (
+//                             <ToysCard key={toy._id} toy={toy}></ToysCard>
+//                         ))
+//                     )}
+//                 </TabPanel>
+
+//                 <TabPanel>
+//                     <h2>mini police car</h2>
+//                     {isLoading ? (
+//                         <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
+//                             <Spinner animation="border" role="status" variant="primary">
+//                                 <span className="sr-only">Loading...</span>
+//                             </Spinner>
+//                         </Container>
+//                     ) : (
+//                         filterToysBySubcategory("police").slice(0, 2).map((toy) => (
+//                             <ToysCard key={toy._id} toy={toy}></ToysCard>
+//                         ))
+//                     )}
+//                 </TabPanel>
+//             </Tabs>
+//         </div>
+//     );
+// };
+
+// export default ShopByCategory;
+
+
+
+
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import ToysCard from "./ToysCard";
-import './ShopByCategory';
-import { Container, Spinner } from "react-bootstrap";
+import { Container, Spinner, Row, Col } from "react-bootstrap";
 
-const SubCat = () => {
+const ShopByCategory = () => {
     const [toys, setToys] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -111,11 +217,10 @@ const SubCat = () => {
         }
     };
 
-    console.log(toys);
-
     const filterToysBySubcategory = (subcategory) => {
         return toys.filter((toy) => toy.subCategory === subcategory);
     };
+
     return (
         <div className="tabs">
             <Container>
@@ -123,15 +228,15 @@ const SubCat = () => {
                     Select each category to show different toys
                 </div>
             </Container>
-            <Tabs >
+            <Tabs>
                 <TabList>
-                    <Tab className="tab">sports car</Tab>
-                    <Tab className="tab">regular car</Tab>
-                    <Tab className="tab">mini police car</Tab>
+                    <Tab className="tab">Sports Car</Tab>
+                    <Tab className="tab">Regular Car</Tab>
+                    <Tab className="tab">Mini Police Car</Tab>
                 </TabList>
 
                 <TabPanel>
-                    <h2>sports car</h2>
+                    <h2>Sports Car</h2>
                     {isLoading ? (
                         <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
                             <Spinner animation="border" role="status" variant="primary">
@@ -139,32 +244,20 @@ const SubCat = () => {
                             </Spinner>
                         </Container>
                     ) : (
-                        filterToysBySubcategory("sports")
-                            .slice(0, 2)
-                            .map((toy) => (
-                                // console.log(toy.name)
-                                <ToysCard key={toy._id} toy={toy}></ToysCard>
-                            ))
-                    )}
-                </TabPanel>
-
-                <TabPanel >
-                    <h2>regular car</h2>
-                    {isLoading ? (
-                        <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
-                            <Spinner animation="border" role="status" variant="primary">
-                                <span className="sr-only">Loading...</span>
-                            </Spinner>
-                        </Container>
-                    ) : (
-                            filterToysBySubcategory("regular").slice(0, 2).map((toy) => (
-                            <ToysCard key={toy._id} toy={toy}></ToysCard>
-                        ))
+                        <Row xs={1} md={2} lg={3}>
+                            {filterToysBySubcategory("sports")
+                                .slice(0, 2)
+                                .map((toy) => (
+                                    <Col key={toy._id}>
+                                        <ToysCard toy={toy}></ToysCard>
+                                    </Col>
+                                ))}
+                        </Row>
                     )}
                 </TabPanel>
 
                 <TabPanel>
-                    <h2>mini police car</h2>
+                    <h2>Regular Car</h2>
                     {isLoading ? (
                         <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
                             <Spinner animation="border" role="status" variant="primary">
@@ -172,9 +265,36 @@ const SubCat = () => {
                             </Spinner>
                         </Container>
                     ) : (
-                            filterToysBySubcategory("police").slice(0, 2).map((toy) => (
-                            <ToysCard key={toy._id} toy={toy}></ToysCard>
-                        ))
+                        <Row xs={1} md={2} lg={3}>
+                            {filterToysBySubcategory("regular")
+                                .slice(0, 2)
+                                .map((toy) => (
+                                    <Col key={toy._id}>
+                                        <ToysCard toy={toy}></ToysCard>
+                                    </Col>
+                                ))}
+                        </Row>
+                    )}
+                </TabPanel>
+
+                <TabPanel>
+                    <h2>Mini Police Car</h2>
+                    {isLoading ? (
+                        <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
+                            <Spinner animation="border" role="status" variant="primary">
+                                <span className="sr-only">Loading...</span>
+                            </Spinner>
+                        </Container>
+                    ) : (
+                        <Row xs={1} md={2} lg={3}>
+                            {filterToysBySubcategory("police")
+                                .slice(0, 2)
+                                .map((toy) => (
+                                    <Col key={toy._id}>
+                                        <ToysCard toy={toy}></ToysCard>
+                                    </Col>
+                                ))}
+                        </Row>
                     )}
                 </TabPanel>
             </Tabs>
@@ -182,4 +302,4 @@ const SubCat = () => {
     );
 };
 
-export default SubCat;
+export default ShopByCategory;

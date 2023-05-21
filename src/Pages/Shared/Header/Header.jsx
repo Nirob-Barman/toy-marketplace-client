@@ -25,16 +25,11 @@ const Header = () => {
         <Container data-aos="flip-left" className='my-5'>
             <Banner />
             <Gallery />
-
             {/* <ReactTabs /> */}
             <ShopByCategory />
-
             <Customization />
-
             <ReviewsAndRatings />
-
             <SocialSharing />
-
         </Container>
     );
 };
