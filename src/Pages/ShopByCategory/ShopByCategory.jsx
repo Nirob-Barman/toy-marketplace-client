@@ -118,6 +118,11 @@ const SubCat = () => {
     };
     return (
         <div className="tabs">
+            <Container>
+                <div className="text-center">
+                    Select each category to show different toys
+                </div>
+            </Container>
             <Tabs >
                 <TabList>
                     <Tab className="tab">sports car</Tab>

@@ -5,7 +5,7 @@ import useTitle from '../../hooks/useTitle';
 const Blogs = () => {
     useTitle('Blog');
     return (
-        <Container>
+        <Container className='my-5'>
             <div>
                 <h3>What is an access token and refresh token?</h3>
                 <p>
