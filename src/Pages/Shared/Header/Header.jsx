@@ -10,8 +10,9 @@ import ReviewsAndRatings from '../../ReviewsAndRatings/ReviewsAndRatings';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
-import ShopByCategory from '../../ShopByCategory/ShopByCategory';
+// import ShopByCategory from '../../ShopByCategory/ShopByCategory';
 import useTitle from '../../../hooks/useTitle';
+import CategoryTab from '../../ShopByCategory/CategoryTab';
 
 const Header = () => {
 
@@ -26,7 +27,8 @@ const Header = () => {
             <Banner />
             <Gallery />
             {/* <ReactTabs /> */}
-            <ShopByCategory />
+            {/* <ShopByCategory /> */}
+            <CategoryTab />
             <Customization />
             <ReviewsAndRatings />
             <SocialSharing />

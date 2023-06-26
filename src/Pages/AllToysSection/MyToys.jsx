@@ -316,6 +316,17 @@ const MyToys = () => {
     }, [toysData]);
 
     const handleDelete = async (id) => {
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        })
+
         try {
             const response = await fetch(
                 `https://toy-server-plum.vercel.app/toys/${id}`,
