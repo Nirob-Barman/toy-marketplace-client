@@ -1,7 +1,19 @@
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 const Gallery = () => {
+    const [showImages, setShowImages] = useState(false);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setShowImages(true);
+        }, 500);
+    }, []);
+
     const images = [
         { src: 'https://img.freepik.com/free-vector/baby-boy-background-hand-drawn-style_23-2147767182.jpg?w=740&t=st=1684627788~exp=1684628388~hmac=e44e2ace86c44cfb5d515edc9d527726e8eca1e1887b014cbaba36f7aa205d7a', alt: 'Image 1', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
         { src: 'https://img.freepik.com/premium-vector/vector-illustration-little-boy-driving-toy-car_491934-868.jpg?w=740', alt: 'Image 2', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
@@ -12,30 +24,58 @@ const Gallery = () => {
     ];
 
     return (
-        <div className="py-5">
+        // <div className="py-5">
 
+        //     <Container>
+        //         <h2 className="text-center mb-4">Gallery</h2>
+        //         <Row>
+        //             {images.map((image, index) => (
+        //                 <Col xs={12} sm={6} md={4} lg={3} key={index} className="mb-4">
+        //                     <Card>
+        //                         <Card.Img
+        //                             src={image.src}
+        //                             alt={image.alt}
+        //                             className="img-fluid gallery-image"
+        //                             style={{ width: "200px", height: "200px" }}
+        //                         />
+        //                         <Card.Body>
+        //                             <Card.Title className='text-center'>{image.alt}</Card.Title>
+        //                             {/* <Card.Text>{image.description}</Card.Text> */}
+        //                         </Card.Body>
+        //                     </Card>
+        //                 </Col>
+        //             ))}
+        //         </Row>
+        //     </Container>
+            
+        // </div>
+
+        <div className="py-5">
             <Container>
                 <h2 className="text-center mb-4">Gallery</h2>
                 <Row>
-                    {images.map((image, index) => (
-                        <Col xs={12} sm={6} md={4} lg={3} key={index} className="mb-4">
-                            <Card>
-                                <Card.Img
-                                    src={image.src}
-                                    alt={image.alt}
-                                    className="img-fluid gallery-image"
-                                    style={{ width: "200px", height: "200px" }}
-                                />
-                                <Card.Body>
-                                    <Card.Title className='text-center'>{image.alt}</Card.Title>
-                                    {/* <Card.Text>{image.description}</Card.Text> */}
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    ))}
+                    <TransitionGroup component={null}>
+                        {showImages &&
+                            images.map((image, index) => (
+                                <CSSTransition key={index} timeout={500} classNames="fade">
+                                    <Col xs={12} sm={6} md={4} lg={3} className="mb-4">
+                                        <Card>
+                                            <Card.Img
+                                                src={image.src}
+                                                alt={image.alt}
+                                                className="img-fluid gallery-image"
+                                                style={{ width: '200px', height: '200px' }}
+                                            />
+                                            <Card.Body>
+                                                <Card.Title className="text-center">{image.alt}</Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                </CSSTransition>
+                            ))}
+                    </TransitionGroup>
                 </Row>
             </Container>
-            
         </div>
     );
 };

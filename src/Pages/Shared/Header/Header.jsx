@@ -13,6 +13,7 @@ import { useEffect } from 'react';
 // import ShopByCategory from '../../ShopByCategory/ShopByCategory';
 import useTitle from '../../../hooks/useTitle';
 import CategoryTab from '../../ShopByCategory/CategoryTab';
+import WishList from '../../Home/WishList';
 
 const Header = () => {
 
@@ -29,6 +30,9 @@ const Header = () => {
             {/* <ReactTabs /> */}
             {/* <ShopByCategory /> */}
             <CategoryTab />
+
+            <WishList />
+
             <Customization />
             <ReviewsAndRatings />
             <SocialSharing />
